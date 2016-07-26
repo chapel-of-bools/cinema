@@ -1,1 +1,13 @@
-<h2>{{numTheaters}} theaters</h2>
+<h2>{{theaters.length}} theaters</h2>
+{{#each theaters as |theater index|}}
+<h3>
+  <a href="/theaters/{{theater.name}}">
+    {{theater.name}} is in {{theater.location}}</a>
+</h3>
+{{/each}}
+
+<form action="/theaters" method="post">
+  <input type="text" name="theater[name]" placeholder="Name" />
+  <input type="text" name="theater[location]" placeholder="Location" />
+  <button type="submit">Add a theater</button>
+</form>

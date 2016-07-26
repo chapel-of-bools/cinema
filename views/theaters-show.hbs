@@ -1,0 +1,12 @@
+{{#unless theater}}
+
+
+<h2>That theater couldn't be found!</h2>
+{{else}}
+<h2>{{theater.name}} in {{theater.location}}</h2>
+<form action="/theaters/{{theater.name}}" method="post">
+  <input type="text" name="theater[name]" placeholder="Name" value="{{theater.name}}" />
+  <input type="text" name="theater[location]" placeholder="Location" value="{{theater.location}}" />
+<button type="submit">Edit Theater</button>
+</form>
+{{/unless}}
